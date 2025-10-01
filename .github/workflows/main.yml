@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.22.0' # optional, pin Flutter version
       - run: flutter pub get
       - run: flutter build apk --release --split-per-abi
       - run: flutter build appbundle --release
@@ -30,8 +28,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.22.0'
       - run: flutter pub get
       - run: |
           flutter build ios --no-codesign --release
