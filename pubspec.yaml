@@ -1,0 +1,67 @@
+name: test_task
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.8
+  get_cli: ^1.9.1
+  get: ^4.7.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^5.0.0
+
+flutter:
+
+
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/fonts/
+    - assets/image/
+    - assets/icons/
+
+  fonts:
+    - family: Inter-Regular
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+
+    - family: Inter-Medium
+      fonts:
+        - asset: assets/fonts/Inter-Medium.ttf
+
+    - family: Inter-Bold
+      fonts:
+        - asset: assets/fonts/Inter-Bold.ttf
+
+    - family: Inter-Light
+      fonts:
+        - asset: assets/fonts/Inter-Light.ttf
+
+    - family: Inter-Thin
+      fonts:
+        - asset: assets/fonts/Inter-Thin.ttf
+
+    - family: Inter-ExtraBold
+      fonts:
+        - asset: assets/fonts/Inter-ExtraBold.ttf
+
+    - family: Recoleta-SemiBold
+      fonts:
+        - asset: assets/fonts/Recoleta-SemiBold.ttf
