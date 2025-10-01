@@ -21,21 +21,21 @@ jobs:
             build/app/outputs/flutter-apk/*.apk
             build/app/outputs/bundle/release/*.aab
 
-  build-ios:
-    name: Build iOS
-    runs-on: macos-latest
-    needs: build-android
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-      - run: flutter pub get
-      - run: |
-          flutter build ios --no-codesign --release
-          cd build/ios/iphoneos
-          mkdir -p Payload
-          cp -r Runner.app Payload/
-          zip -r app.ipa Payload
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ios-build
-          path: build/ios/iphoneos/app.ipa
+build-ios:
+  name: Build iOS
+  runs-on: macos-latest
+  needs: build-android
+  steps:
+    - uses: actions/checkout@v4
+    - uses: subosito/flutter-action@v2
+    - run: flutter pub get
+    - run: |
+        flutter build ios --no-codesign --release
+        mkdir -p build/ios/ipa/Payload
+        cp -r build/ios/iphoneos/Runner.app build/ios/ipa/Payload/
+        cd build/ios/ipa
+        zip -r app.ipa Payload
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ios-build
+        path: build/ios/ipa/app.ipa
